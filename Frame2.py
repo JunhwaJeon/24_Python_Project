@@ -41,14 +41,9 @@ class Frame2(tk.Frame):
         pay_monthly=tk.Checkbutton(self, text='할부',variable=tk.BooleanVar())
         pay_monthly.place()
         
-        btn_clear=tk.Button(self,text='초기화',command=)
-        btn_clear.place()
         
-        btn_see=tk.Button(self,text='결과 보기',command=)
-        btn_see.place()
         
-        btn_previous=tk.Button(self,text='이전 페이지로'command=)
-        btn_previous.place()
+        
         
     def clear_btn(self):
         
