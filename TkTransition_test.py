@@ -24,27 +24,20 @@ class App(tk.Tk):
         self.frame3.place(x=0, y=0, relwidth=1, relheight=1)
         self.frames[Frame3] = self.frame3
         
-        
-        # 컨트롤 버튼을 생성합니다.
-        self.button1 = tk.Button(self.frame1, text="화면 1로 이동", command=lambda: self.show_frame(Frame1))
-        self.button1.place(x=50, y=250)
-        
-        self.button2 = tk.Button(self.frame1, text="화면 2로 이동", command=lambda: self.show_frame(Frame2))
-        self.button2.place(x=150, y=250)
-        
-        self.button3 = tk.Button(self.frame1, text="화면 3로 이동", command=lambda: self.show_frame(Frame3))
-        self.button3.place(x=250, y=250)
-        
-        
         # 초기 화면 설정
         self.show_frame(Frame1)
-        self.button1.pack()
-        self.button2.pack()
-        self.button3.pack()
         
     def show_frame(self, frame):
         # 선택한 화면을 보여줍니다.
         frame_to_show = self.frames[frame]
+        self.button1 = tk.Button(frame_to_show, text="화면 1로 이동", command=lambda: self.show_frame(Frame1))
+        self.button1.place(x=50, y=250)
+        
+        self.button2 = tk.Button(frame_to_show, text="화면 2로 이동", command=lambda: self.show_frame(Frame2))
+        self.button2.place(x=150, y=250)
+        
+        self.button3 = tk.Button(frame_to_show, text="화면 3로 이동", command=lambda: self.show_frame(Frame3))
+        self.button3.place(x=250, y=250)
         frame_to_show.tkraise()
 
 class Frame1(tk.Frame):
